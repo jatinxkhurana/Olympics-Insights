@@ -1,12 +1,21 @@
+# IDE
+.idea/
+
+# Virtual environments
 venv
 ENV/
 env/
 .env
 .venv
+
+# Python
 __pycache__/
 *.pyc
 .pytest_cache/
 .DS_Store
+
+# Data files (do not commit large datasets)
 athlete_events.csv
 noc_regions.csv
+
 /.ipynb_checkpoints

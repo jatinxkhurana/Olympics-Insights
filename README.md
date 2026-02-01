@@ -1,29 +1,32 @@
-# Olympics-Insights
+﻿# Olympics-Insights
 
-Interactive Streamlit app to explore historical Olympic data (medals, athletes, events, country-wise analysis).
+Simple Streamlit app to explore Olympic data (medals, athletes, events). This repository is structured so beginners can run the app locally and understand the code.
 
-Quick start
+Prerequisites
 
-1. Create a virtual environment and activate it.
+- Python 3.10+ installed
+- A copy of the datasets `athlete_events.csv` and `noc_regions.csv` placed in the project root (they are intentionally excluded from the repository to keep it small).
 
-```bash
+Quick start (Windows)
+
+```powershell
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+venv\Scripts\activate
 pip install -r requirements.txt
-```
-
-2. Run the app locally:
-
-```bash
 streamlit run app.py
 ```
 
-Notes
-- The dataset `athlete_events.csv` is large and should NOT be committed to the repository in most cases. If you plan to include it, be aware of repository size limits.
-- See `helper.py` and `preprocessor.py` for data handling logic.
+Project layout (important files)
 
-Contributing
-- Please open issues or pull requests. See `CONTRIBUTING.md` for guidelines.
+- `app.py`: Streamlit app entrypoint
+- `helper.py`: data aggregation and helper functions used by the app
+- `preprocessor.py`: small preprocessing helpers
+- `requirements.txt`: runtime dependencies
+- `dev-requirements.txt`: dev tools (formatting, linting, tests)
 
-License
-- MIT
+Notes for beginners
+
+- Do not commit large CSV datasets to the repo. Place `athlete_events.csv` and `noc_regions.csv` in the project root before running the app.
+- Use `venv` and `dev-requirements.txt` to run formatters and tests: `pip install -r dev-requirements.txt && black . && pytest`.
+
+If you'd like, I can also add a small script to download the sample dataset automatically for newcomers.
